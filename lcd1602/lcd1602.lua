@@ -59,7 +59,6 @@ end
 function clearPanel()
      sendbyte(0x01,gpio.LOW)
      pause(10)
---     sendbyte(0x02,gpio.LOW)
 end
 
 
@@ -116,7 +115,7 @@ sendbyte(0x28,gpio.LOW)
 sendbyte(0x0C,gpio.LOW)
 
 lcdtimer=tmr.create()
-lcdtimer:register(1,tmr.ALARM_AUTO,sendNextByte)
+lcdtimer:register(10,tmr.ALARM_AUTO,sendNextByte)
 lcdtimer:start()
 
 clearBuffer()
