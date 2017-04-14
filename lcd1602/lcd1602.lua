@@ -113,6 +113,7 @@ sendbyte(0x33,gpio.LOW)
 -- another 0b0011 then the 0b0010 to put it in 4 bit mode.
 sendbyte(0x32,gpio.LOW)
 sendbyte(0x28,gpio.LOW)
+sendbyte(0x0C,gpio.LOW)
 
 lcdtimer=tmr.create()
 lcdtimer:register(1,tmr.ALARM_AUTO,sendNextByte)
