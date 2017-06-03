@@ -22,21 +22,13 @@ function resetPins()
      end
 end
 
-function pause(ms)
-     tmr.delay(ms)
-end
-
 function sendClock()
      gpio.write(CLK,gpio.LOW)
-     pause(1)
      gpio.write(CLK,gpio.HIGH)
-     pause(1)
      gpio.write(CLK,gpio.LOW)
-     pause(1)
 end
 
 function sendbyte(b,charmode)
-     pause(1)
      gpio.write(RS,charmode)
 
      -- shift right 4 times putting the bits on the output lines
@@ -58,7 +50,7 @@ end
 
 function clearPanel()
      sendbyte(0x01,gpio.LOW)
-     pause(10)
+     tmr.delay(10)
 end
 
 
